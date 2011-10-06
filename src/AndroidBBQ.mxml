@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:TabbedViewNavigatorApplication xmlns:fx="http://ns.adobe.com/mxml/2009" initialize="init(event)"  
+							xmlns:s="library://ns.adobe.com/flex/spark" splashScreenImage="@Embed('/assets/splash/splash.jpg')"
+							
+							applicationDPI="240">
+	
+	<fx:Style source="main.css" />
+	
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import com.androidbbq.fonts.Lobster;
+			import com.androidbbq.fonts.LobsterTLF;
+			import com.androidbbq.fonts.Oswald;
+			import com.androidbbq.fonts.OswaldTLF;
+			
+			import mx.events.FlexEvent;
+			
+			
+			
+			private function getFonts():void
+			{
+				var myFont1:Font = new Lobster as Font;
+				var myFont2:Font = new LobsterTLF as Font;
+				var myFont3:Font = new Oswald as Font;
+				var myFont4:Font = new OswaldTLF as Font;
+				
+				var fonts:Array = Font.enumerateFonts();
+				
+				for each (var key:Font in fonts)
+				{
+					trace(key.fontName + " - " + key.fontStyle + " - " + key.fontType);
+				}
+			}
+			
+			protected function init(event:FlexEvent):void
+			{
+				getFonts();
+				
+			}
+			
+		]]>
+	</fx:Script>
+	
+	
+	<s:ViewNavigator id="scheduleView" label="Schedule" firstView="views.ScheduleView" firstViewData="{schedule}" width="100%" height="100%" />
+	<s:ViewNavigator id="newsView" label="News" firstView="views.NewsView" width="100%" height="100%" />
+	
+	<fx:Declarations>
+		<s:ArrayCollection id="schedule">
+			<fx:Object title="Pre-BBQ Pool Party" starttime="{new Date(2011,8,30,19,0,0)}" endtime="{new Date(2011,8,30,22,0,0)}"> 
+				<fx:description>Geeks in bathing suites.  Should be an awesome time!</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Using Adobe Air in Android" starttime="{new Date(2011,9,1,10,0,0)}" endtime="{new Date(2011,9,1,11,0,0)}"> 
+				<fx:description>Are you using Adobe Air? Should you? Join Adobe Specialist Terry Ryan for a deep look into how you can supercharge your app with Adobe Air.</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Texas Instruments" starttime="{new Date(2011,9,1,10,0,0)}" endtime="{new Date(2011,9,1,11,0,0)}"> 
+				<fx:description>Join the Texas Instruments team as they talk about OMAP and Android!</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Adobe Community Panel" starttime="{new Date(2011,9,1,11,0,0)}" endtime="{new Date(2011,9,1,12,0,0)}"> 
+				<fx:description>Join Adobe Community Leaders in a Q&amp;A on Adobe’s products on Android. Have questions about Flash? Air? Livecycle? You will want to be here!</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Beginning Android Development" starttime="{new Date(2011,9,1,11,0,0)}" endtime="{new Date(2011,9,1,12,0,0)}"> 
+				<fx:description>Join the MobiCartel team, creators of the web series "Coding Green Robots", as they bring you a hands on look at how to start developing for Android!</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Skifta" starttime="{new Date(2011,9,1,12,0,0)}" endtime="{new Date(2011,9,1,13,0,0)}"> 
+				<fx:description>Get up close and personal with Skifta, the popular media-shifting app for Android that lets you access your music, photos and videos from anywhere and stream to DLNA and UPnP TVs, stereos. PS3 consoles and more. Come see for yourself why Skifta for Android was recently selected by Stuff Magazine as one of the top-100 apps of all time! www.skifta.com</fx:description> 
+			</fx:Object > 
+			<fx:Object title="CyanogenMod Community Panel" starttime="{new Date(2011,9,1,13,0,0)}" endtime="{new Date(2011,9,1,14,0,0)}"> 
+				<fx:description>Join in as members of the CyanogenMod developer team answer questions, talk about the status of the project, and what is in store for the future of the most popular Android Rom!</fx:description> 
+			</fx:Object > 
+			<fx:Object title="XDA" starttime="{new Date(2011,9,1,14,0,0)}" endtime="{new Date(2011,9,1,15,0,0)}"> 
+				<fx:description>In what promises to be a packed room, the XDA session hosted by Adam Outler and Josh Groce will cover the hardware side of Android and unbricking Android devices.  Specific talking points will address things like Arduino, recovering phones and tools like JTAG.  If time allows, there will possibly be demonstrations of both hacking and recovering phones using JTAG</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Advanced Android Development" starttime="{new Date(2011,9,1,14,0,0)}" endtime="{new Date(2011,9,1,15,0,0)}"> 
+				<fx:description>Want to learn more about developing for Android? Join the XDA Developers in a brief session on some advanced tips and tricks to power your app.</fx:description> 
+			</fx:Object > 
+			<fx:Object title="LG Electronics" starttime="{new Date(2011,9,1,15,0,0)}" endtime="{new Date(2011,9,1,16,0,0)}"> 
+				<fx:description>Meet the LG Android developers and talk about their experiences with Android.</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Playing with Sphero Balls" starttime="{new Date(2011,9,1,15,0,0)}" endtime="{new Date(2011,9,1,16,0,0)}"> 
+				<fx:description>The coolest gadget for Android will be on site, and the creators will be on site showing off their balls and talking about the Software Developer Kit for Android!</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Motorola Mobility" starttime="{new Date(2011,9,1,16,0,0)}" endtime="{new Date(2011,9,1,17,0,0)}"> 
+				<fx:description>Motorola and other handset manufacturers have chosen Android as a simple, powerful means to bring a whole new generation of phenomenal mobile experiences to users. Providing ways for Android app developers to build and test apps that deliver compelling experiences on mobile devices is becoming a major differentiating factor. The first half of this session will focus on Motorola Mobility resources for Android developers and how Motorola’s developer network enables developers to create, test and market their applications — including MOTODEV Studio for Android, Virtual Developer Lab (VDL) and App Accelerator program.The second half of the session, will shift the discussion to focus on application optimization for tablet devices. Having a great user interface is often the difference between an application that sells in Android Market and one that doesn’t. When transitioning an application to tablets, upgrading the look and feel of the interface is a key component to maintaining an engaging mobile experience. Motorola will present the best development tips for creating Android apps that users love on tablets like the Motorola XOOM. You’ll get design and coding tips for the most popular UI patterns for tablets.</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Meta Watch SDK" starttime="{new Date(2011,9,1,16,0,0)}" endtime="{new Date(2011,9,1,17,0,0)}"> 
+				<fx:description>Join Meta Watch as they talk about building support into your apps!</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Verizon" starttime="{new Date(2011,9,1,17,0,0)}" endtime="{new Date(2011,9,1,18,0,0)}"> 
+				<fx:description>Optimizing applications for 4G LTE</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Spacetime Studios" starttime="{new Date(2011,9,1,17,0,0)}" endtime="{new Date(2011,9,1,18,0,0)}"> 
+				<fx:description>Meet the developers behind the insanely popular Pocket Legents and Star Legends Mobile MMO titles! Special in-game treats for hanging out with the Developers!</fx:description> 
+			</fx:Object > 
+			<fx:Object title="HTC Developer Panel" starttime="{new Date(2011,9,1,18,0,0)}" endtime="{new Date(2011,9,1,19,0,0)}"> 
+				<fx:description>Join the HTCDev team for a discussion on the OpenSenseSDK, their commitment to bootloaders, and more!</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Swype and SwiftKey talk Keyboards!" starttime="{new Date(2011,9,1,18,0,0)}" endtime="{new Date(2011,9,1,19,0,0)}"> 
+				<fx:description>Keyboards are unlike virtually any other application on our mobile devices. In addition to being used across the entire experience, they are also designed from the ground up to work for everyone. The folks from SwiftKey and Swype will be sharing their experiences in how the entire development process changes when your target audience includes anyone and everyone</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Big Android BBQ Bar Crawl" starttime="{new Date(2011,9,1,21,0,0)}" endtime="{new Date(2011,9,2,2,0,0)}"> 
+				<fx:description>We go from bar to bar. Not too much to explain. </fx:description> 
+			</fx:Object > 
+			<fx:Object title="Big Android BBQ" starttime="{new Date(2011,9,2,13,0,0)}" endtime="{new Date(2011,9,2,21,0,0)}"> 
+				<fx:description>Meta BBQ</fx:description> 
+			</fx:Object > 
+			<fx:Object title="Google Places Scavenger Hunt" starttime="{new Date(2011,9,2,9,0,0)}" endtime="{new Date(2011,9,2,12,0,0)}"> 
+				<fx:description>No explanation is required.</fx:description> 
+			</fx:Object > 
+		</s:ArrayCollection>
+	</fx:Declarations>
+</s:TabbedViewNavigatorApplication>

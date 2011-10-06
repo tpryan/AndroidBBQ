@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" actionBarVisible="false" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="Schedule">
+	
+	<fx:Script>
+		<![CDATA[
+			protected function scheduleList_clickHandler(event:MouseEvent):void
+			{
+				if (scheduleList.selectedIndex > -1){
+					navigator.pushView(EventView, scheduleList.selectedItem);
+				}
+				
+			}
+		]]>
+	</fx:Script>
+	
+	
+	<s:List id="scheduleList" width="100%" height="100%" dataProvider="{data}" click="scheduleList_clickHandler(event)">
+		<s:itemRenderer>
+			<fx:Component>
+				<s:IconItemRenderer labelFunction="getTimeInfo" messageField="title" styleName="scheduleLabel" messageStyleName="scheduleMessage">
+					<fx:Script>
+						<![CDATA[
+							import spark.formatters.DateTimeFormatter;
+							
+							
+							public function getTimeInfo(obj:Object):String{
+								var startFormatter:DateTimeFormatter = new DateTimeFormatter();
+								startFormatter.dateTimePattern = "E h:mm a";
+								var start:String = startFormatter.format(obj.starttime);
+								
+								var endFormatter:DateTimeFormatter = new DateTimeFormatter();
+								endFormatter.dateTimePattern = "h:mm a";
+								var end:String = endFormatter.format(obj.endtime);
+								
+								return start + " - " + end;
+							}
+						]]>
+					</fx:Script>
+				</s:IconItemRenderer>
+			</fx:Component>
+			
+		</s:itemRenderer>
+	</s:List>
+	
+	
+</s:View>

@@ -1,0 +1,60 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+
+global{
+	font-family: "Oswald";
+}
+
+#titleLabel, s|ActionBar #titleDisplay{
+	font-family: "Lobster 1.4";
+	color: #ca8540;
+}
+
+s|TabbedViewNavigator #tabBar
+{
+	font-family: "Lobster 1.4";
+	color: #ca8540;
+}
+
+#timeLabel{
+	color: #abcf87;
+}
+
+#descriptionLabel{
+	color: #4b4b4b
+}
+
+s|List{
+	alternatingItemColors: #efefef,#FFFFFF;
+	font-family: "Oswald";
+}
+
+
+.scheduleLabel{ color: #abcf87;}
+.scheduleMessage{color: #4b4b4b}
+.newsMessage{color: #4b4b4b}
+.newsLabel{ color: #abcf87;}
+
+@media (application-dpi:160){
+	.scheduleMessage{font-size: 20px; }
+	.scheduleLabel{font-size: 13px;}
+	#titleLabel{font-size: 28px;}
+	.newsMessage{font-size: 12px;}
+	.newsLabel{font-size: 13px;}
+}
+
+@media (application-dpi:240){
+	.scheduleMessage{font-size: 30px; }
+	.scheduleLabel{font-size: 20px;}
+	#titleLabel{font-size: 40px;}
+	.newsMessage{font-size: 18px;}
+	.newsLabel{font-size: 20px;}
+}
+
+@media (application-dpi:320){
+	.scheduleMessage{font-size: 40px; }
+	.scheduleLabel{font-size: 26px;}
+	#titleLabel{font-size: 56px;}
+	.newsMessage{font-size: 24px;}
+	.newsLabel{font-size: 26px;}
+}
